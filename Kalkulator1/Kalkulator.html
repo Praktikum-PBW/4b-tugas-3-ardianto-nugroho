@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="Card1">
+        <div class="Card2">
+            <div class="judul">
+                <h1>Kalkulator</h1>
+            </div>
+            <div class="isi">
+                <form action="#" name="formulir">
+                    <label for="#">Bilangan Pertama:</label><br>
+                    <input type="text" name="bil1" id="bil1" required placeholder="Ketik disini...">
+                    <div class="separator"></div>
+                    <label for="#">Bilangan Kedua:</label><br>
+                    <input type="text" name="bil2" id="bil2" required placeholder="Ketik disini...">
+                    <div class="separator"></div>
+                    <label for="hasil">Hasil:</label><br>
+                    <input type="text" name="hasil" id="hasil" disabled>
+                    <div class="separator"></div>
+                    <select name="opt" id="opt">
+                        <option value="tambah">+</option>
+                        <option value="kurang">-</option>
+                        <option value="kali">*</option>
+                        <option value="bagi">/</option>
+                        <option value="mod">%</option>
+                    </select>
+                    <input type="submit" value="Hitung" class="btn1" onclick="hitung()">
+                    <input type="reset" value="Hapus" class="btn2">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const hitung=()=>{
+            var display=document.formulir;
+            var bilg1=eval(display.bil1.value);
+            var bilg2=eval(display.bil2.value);
+            var operator=display.opt.value;
+            if(operator=="tambah"){
+                var hsl=bilg1+bil2;
+            }
+            else if(operator=="kurang"){
+                var hsl=bilg1-bilg2;
+            }
+            else if(operator=="kali"){
+                var hsl=bilg1*bilg2;
+            }
+            else if(operator=="bagi"){
+                var hsl=bilg1/bilg2;
+            }
+            else if(operator=="mod"){
+                var hsl=bilg1%bilg2;
+            }
+            display.hasil.value=hsl;
+            display.bil1.value="";
+            display.bil2.value="";
+        }
+    </script>
+</body>
+</html>
